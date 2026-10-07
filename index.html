@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script>
+(function () {
+  var current = new URL(window.location.href);
+  var relative = current.searchParams.get("__pages_route");
+  if (relative === null || relative.startsWith("/")) return;
+  var restored = new URL("/diagnostic/" + relative, current.origin);
+  if (restored.origin === current.origin && restored.pathname.startsWith("/diagnostic/")) {
+    window.history.replaceState(null, "", restored.pathname + restored.search + restored.hash);
+  }
+})();
+</script>
+    <link rel="icon" href="data:," />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnostic Workbench Admin</title>
+    <script type="module" crossorigin src="/diagnostic/assets/index-C09rZu4v.js"></script>
+    <link rel="stylesheet" crossorigin href="/diagnostic/assets/index-DStbLgYi.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="icon" href="data:,"><title>Diagnostic Workbench</title>
+<script>
+(function () {
+  var base = "/diagnostic/";
+  var path = window.location.pathname;
+  if (!path.startsWith(base) || path === base) return;
+  var relative = path.slice(base.length) + window.location.search + window.location.hash;
+  window.location.replace(base + "?__pages_route=" + encodeURIComponent(relative));
+})();
+</script></head><body><p>Opening Diagnostic Workbench…</p></body></html>
